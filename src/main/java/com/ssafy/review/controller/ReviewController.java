@@ -63,7 +63,7 @@ public class ReviewController extends HttpServlet{
 		
 		service.modifyReview(review);
 		
-		response.sendRedirect("review?action=list");
+		response.sendRedirect("video?action=videoDetail&videoId=" + review.getVideoId());
 	}
 
 	private void doUpdateForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -77,8 +77,10 @@ public class ReviewController extends HttpServlet{
 	private void doRemove(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		int id = Integer.parseInt(request.getParameter("id"));
 		
+		Review review = service.getReview(id);
+		
 		service.removeReview(id);
-		response.sendRedirect("review?action=list");
+		response.sendRedirect("video?action=videoDetail&videoId=" + review.getVideoId());
 	}
 
 	private void doDetail(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
