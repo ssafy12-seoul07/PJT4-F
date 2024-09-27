@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>게시글 목록</title>
+<title>댓글 목록</title>
 </head>
 <body>
 	<table>
@@ -16,16 +16,17 @@
 			<th>조회수</th>
 			<th>등록일</th>
 		</tr>
-		<c:forEach items="${list}" var="board">
+		<c:forEach items="${list}" var="review">
 			<tr>
-				<td>${board.id}</td>			
-				<td><a href="board?action=detail&id=${board.id}">${board.title}</a></td>			
-				<td>${board.writer}</td>			
-				<td>${board.viewCnt}</td>			
-				<td>${board.regDate}</td>			
+				<td>${review.id}</td>
+				<td><a href="review?action=detail&id=${review.id}">${review.title}</a></td>
+				<td>${review.writer}</td>
+				<td>${review.likeCnt}</td>
+				<td>${review.dislikeCnt}</td>
+				<td>${review.regDate}</td>
 			</tr>
 		</c:forEach>
-	
+
 	</table>
 </body>
 </html>
