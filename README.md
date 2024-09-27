@@ -41,8 +41,8 @@ MVC 패턴
 ## 4. 파트별 변수 이름 통일
 - 영상의 고유번호 videoId와, id를 통일하지 않고 쓰다보니 jsp 내에서 쿼리 파라미터로 넘겨줄 때 혼동이 있었다.
 - request를 받는 Servlet 입장에서, Key의 이름을 조정했다.
-- (video/detail.jsp에서는 Review 서블릿으로 video.id를 보내야한다.
-  review 서블릿은 review 모델이 id와 video.id 속성이 둘 다 있어서, 혼동을 줄이기 위해서 videoId 라는 Key 이름으로 받아야 했다.
+- (video/detail.jsp에서는 Review 서블릿으로 video.id를 보내야한다. <br>
+  review 서블릿은 review 모델이 id와 video.id 속성이 둘 다 있어서, 혼동을 줄이기 위해서 videoId 라는 Key 이름으로 받아야 했다.<br>
   그러나, detail.jsp에서는 갖고있는 모델이 video 이다 보니, Key 이름으로 "id" 라고 보내어 통신에 오류가 발생했다. 그래서 videoId로 수정하여 보냈다.)
   
 
