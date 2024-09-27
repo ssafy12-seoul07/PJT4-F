@@ -25,8 +25,7 @@ public class VideoServiceImpl implements VideoService {
 
 	@Override
 	public Video getVideo(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		return videos.selectOne(id);
 	}
 
 }

@@ -1,7 +1,9 @@
 package com.ssafy.video.model.repository;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.ssafy.video.model.dto.Video;
 
@@ -11,6 +13,7 @@ public class VideoRepositoryImpl implements VideoRepository {
 
 	// 비디오 관리
 	private List<Video> list = new ArrayList<>();
+	private Map<Integer, Video> map = new HashMap<>();
 	
 	private VideoRepositoryImpl() {
 		// 리스트에 비디오 넣기
@@ -37,8 +40,13 @@ public class VideoRepositoryImpl implements VideoRepository {
 
 	@Override
 	public Video selectOne(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	for (int i = 0; i < list.size(); i++) {
+		if(list.get(i).getId() == id) {
+			return list.get(i);
+		}
+	}
+	return null;
+
 	}
 
 	@Override
