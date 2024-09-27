@@ -34,6 +34,7 @@ public class VideoController extends HttpServlet {
 			doGetList(request, response);
 			break;
 		case "videoDetail":
+			System.out.println("#########videoDetail!!!");
 			doVideoDetail(request, response);
 			break;
 		default:
@@ -47,6 +48,8 @@ public class VideoController extends HttpServlet {
 		Integer videoId = Integer.parseInt(request.getParameter("videoId"));
 		List<Review> reviewList = reviewService.getReviewListOfVideo(videoId);
 		Video video = videoService.getVideo(videoId);
+		System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++");
+		System.out.println(reviewList);
 		request.setAttribute("reviewList", reviewList);
 		request.setAttribute("video", video);
 		request.getRequestDispatcher("/WEB-INF/video/detail.jsp").forward(request, response);

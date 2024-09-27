@@ -42,7 +42,7 @@ a:hover {
 			<c:forEach items="${videoList}" var="video" varStatus="status">
 				<tr>
 					<td>${status.count}</td>
-					<td><a href="review?action=videoDetail&videoId=${video.id}">${video.title}</a></td>
+					<td><a href="video?action=videoDetail&videoId=${video.id}">${video.title}</a></td>
 					<td>${video.part}</td>
 					<td>${video.channelName}</td>
 				</tr>

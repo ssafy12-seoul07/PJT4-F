@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix = "c"	 uri = "jakarta.tags.core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +11,7 @@
 	<h2>리뷰 등록</h2>
 	<form action="review" method="POST">
 		<input type="hidden" name="action" value="write">
+		<input type="hidden" name="videoId" value="${videoId}">
 		<div>
 			제목 : <input type="text" name="title">
 		</div>

@@ -23,15 +23,15 @@ public class ReviewRepositoryImpl implements ReviewRepository {
 	}
 
 	public List<Review> selectAllByVideoId(int videoId) {
-		List<Review> list = new ArrayList<>();
-
-		for (Review review : list) {
+		List<Review> tmp = new ArrayList<>();
+		
+		for (Review review : this.list) {
 			if (review.getVideoId() == videoId) {
-				list.add(review);
+				tmp.add(review);
 			}
 		}
 
-		return list;
+		return tmp;
 	}
 
 	public Review selectOne(int id) {

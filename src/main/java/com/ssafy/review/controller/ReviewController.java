@@ -103,10 +103,12 @@ public class ReviewController extends HttpServlet{
 		
 		service.writeReview(review);
 		
-		response.sendRedirect("review?action=list");
+		response.sendRedirect("video?action=videoDetail&videoId=" + videoId);
 	}
 
 	private void doWriteForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		Integer videoId = Integer.parseInt(request.getParameter("videoId"));
+		request.setAttribute("videoId", videoId);
 		request.getRequestDispatcher("/WEB-INF/review/writeform.jsp").forward(request, response);
 	}
 	

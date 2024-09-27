@@ -21,6 +21,7 @@ public class Review implements Serializable {
 
 	public Review(int videoId, String title,  String writer, String content) {
 		this.id = no++;
+		this.videoId = videoId;
 		this.title = title;
 		this.writer = writer;
 		this.content = content;
