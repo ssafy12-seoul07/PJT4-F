@@ -7,7 +7,13 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
+* {
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
 #video-list {
+	box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 	border-collapse: collapse;
 	width: 100%;
 }
@@ -15,6 +21,10 @@
 #video-list td, #video-list th {
 	border: 1px solid black;
 	padding: 5px;
+}
+
+h1{
+	color: #00AE68;
 }
 
 a {
@@ -29,6 +39,7 @@ a:hover {
 </style>
 </head>
 <body>
+	<h1>SSAFIT💪</h1>
 	<table id="video-list">
 		<thead>
 			<tr>
