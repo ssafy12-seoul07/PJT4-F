@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>비디오 목록</title>
 <style>
 #video-list {
 	border-collapse: collapse;
