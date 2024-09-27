@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet("/index.jsp")
-public class FrontController extends HttpServlet {
+public class MainController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
