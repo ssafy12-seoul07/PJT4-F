@@ -35,12 +35,7 @@ public class ReviewRepositoryImpl implements ReviewRepository {
 	}
 
 	public Review selectOne(int id) {
-		int index = findIndexById(id);
-		if (index == -1) {
-			return null;
-		}
-
-		return list.get(index);
+		return reviews.get(id);
 	}
 
 	public void insertReview(Review review) {
@@ -50,9 +45,14 @@ public class ReviewRepositoryImpl implements ReviewRepository {
 	}
 
 	public void updateReview(Review review) {
-		reviews.put(review.getId(), review);
+		if (reviews.get(review.getId()) != null) {
+			reviews.put(review.getId(), review);
+		}
 
-		list.set(review.getId(), review);
+		int index = findIndexById(review.getId());
+		if (index >= 0) {
+			list.set(index, review);
+		}
 	}
 
 	public void deleteReview(int id) {
