@@ -1,28 +1,32 @@
-package com.ssafy.board.model.dto;
+package com.ssafy.review.model.dto;
 
 import java.io.Serializable;
 import java.util.Date;
 
-public class Board implements Serializable {
+public class Review implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private static int no = 1; //클래스변수
 	private int id;
+	private int videoId;
 	private String title;
 	private String writer;
 	private String content;
 	private String regDate;
-	private int viewCnt; //조회수
+	private int likeCnt;
+	private int dislikeCnt;
 
-	public Board() {
+	public Review() {
 	}
 
-	public Board(String title, String writer, String content) {
+	public Review(int videoId, String title,  String writer, String content) {
 		this.id = no++;
 		this.title = title;
 		this.writer = writer;
 		this.content = content;
 		this.regDate = new Date().toString();
+		this.likeCnt = 0;
+		this.dislikeCnt = 0;
 	}
 
 	public static int getNo() {
@@ -30,7 +34,7 @@ public class Board implements Serializable {
 	}
 
 	public static void setNo(int no) {
-		Board.no = no;
+		Review.no = no;
 	}
 
 	public int getId() {
@@ -39,6 +43,14 @@ public class Board implements Serializable {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public int getVideoId() {
+		return videoId;
+	}
+
+	public void setVideoId(int videoId) {
+		this.videoId = videoId;
 	}
 
 	public String getTitle() {
@@ -73,18 +85,28 @@ public class Board implements Serializable {
 		this.regDate = regDate;
 	}
 
-	public int getViewCnt() {
-		return viewCnt;
+	public int getLikeCnt() {
+		return likeCnt;
 	}
 
-	public void setViewCnt(int viewCnt) {
-		this.viewCnt = viewCnt;
+	public void setLikeCnt(int likeCnt) {
+		this.likeCnt = likeCnt;
 	}
+
+	public int getDislikeCnt() {
+		return dislikeCnt;
+	}
+
+	public void setDislikeCnt(int dislikeCnt) {
+		this.dislikeCnt = dislikeCnt;
+	}
+
 
 	@Override
 	public String toString() {
-		return "Board [id=" + id + ", title=" + title + ", writer=" + writer + ", content=" + content + ", regDate="
-				+ regDate + ", viewCnt=" + viewCnt + "]";
+		return "Review [id=" + id + ", videoId=" + videoId + ", title=" + title + ", writer=" + writer + ", content="
+				+ content + ", regDate=" + regDate + ", likeCnt=" + likeCnt + ", dislikeCnt=" + dislikeCnt + "]";
 	}
+
 
 }

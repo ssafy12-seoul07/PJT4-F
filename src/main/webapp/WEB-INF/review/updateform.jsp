@@ -15,7 +15,7 @@
 			글 제목 : <input type="text" name="title" value="${board.title }">
 		</div>
 		<div>
-			글 쓰니 : <input type="text" name="writer" value="${board.writer }">
+			글 쓰니 : <input type="text" name="writer" value="${board.writer }" disabled="true">
 		</div>
 		<div>
 			글 내용 : <textarea rows="10" cols="30" name="content">${board.content}</textarea>
