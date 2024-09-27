@@ -9,6 +9,6 @@
 </head>
 <body>
 	<h2>SSAFIT</h2>
-	<a href="/main?action=getList">메인페이지</a>
+	<a href="video?action=getList">메인페이지</a>
 </body>
 </html>
