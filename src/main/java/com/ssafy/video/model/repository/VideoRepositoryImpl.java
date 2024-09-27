@@ -32,8 +32,7 @@ public class VideoRepositoryImpl implements VideoRepository {
 	
 	@Override
 	public List<Video> selectAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return list;
 	}
 
 	@Override
