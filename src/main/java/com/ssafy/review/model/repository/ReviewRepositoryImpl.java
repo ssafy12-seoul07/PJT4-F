@@ -24,7 +24,7 @@ public class ReviewRepositoryImpl implements ReviewRepository {
 
 	public List<Review> selectAllByVideoId(int videoId) {
 		List<Review> tmp = new ArrayList<>();
-		
+
 		for (Review review : this.list) {
 			if (review.getVideoId() == videoId) {
 				tmp.add(review);
@@ -35,7 +35,12 @@ public class ReviewRepositoryImpl implements ReviewRepository {
 	}
 
 	public Review selectOne(int id) {
-		return reviews.get(id);
+		int index = findIndexById(id);
+		if (index == -1) {
+			return null;
+		}
+
+		return list.get(index);
 	}
 
 	public void insertReview(Review review) {
@@ -51,7 +56,39 @@ public class ReviewRepositoryImpl implements ReviewRepository {
 	}
 
 	public void deleteReview(int id) {
-		list.remove(id);
+		int index = findIndexById(id);
+		if (index == -1) {
+			return;
+		}
+
+		list.remove(index);
 	}
 
+	private int findIndexById(int id) {
+		if (list.size() <= id) {
+			for (int i = list.size() - 1; i >= 0; i--) {
+				if (list.get(i).getId() == id) {
+					return i;
+				}
+			}
+		}
+
+		int l = 0, r = list.size() - 1;
+		while (l < r) {
+			int mid = (l + r) / 2;
+
+			int tmp = list.get(mid).getId();
+			if (tmp == id) {
+				return mid;
+			}
+
+			else if (tmp > id) {
+				r = mid + 1;
+			} else {
+				l = mid;
+			}
+		}
+
+		return -1;
+	}
 }
