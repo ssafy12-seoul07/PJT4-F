@@ -4,13 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>상세페이지</title>
+<title>상세 페이지</title>
 </head>
 <body>
-	<div>${board.title }</div>
-	<div>${board.content }</div>
+	<div>${review.title }</div>
+	<div>${review.content }</div>
 	
-	<a href="board?action=delete&id=${board.id}">삭제</a>
-	<a href="board?action=updateform&id=${board.id}">수정</a>
+	<a href="review?action=delete&id=${review.id}">삭제</a>
+	<a href="review?action=updateform&id=${review.id}">수정</a>
 </body>
 </html>

@@ -1,22 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>댓글 목록</title>
+<title>비디오 상세</title>
 </head>
 <body>
-	<table>
+	<div>${video.title }</div>
+	<div>${video.part }</div>
+	<div>${video.channelName }</div>
+	<div>${video.url }</div>
+	
+	<c:forEach items="${reviewList}" var="review">
 		<tr>
-			<th>ID</th>
-			<th>제목</th>
-			<th>쓰니</th>
-			<th>조회수</th>
-			<th>등록일</th>
-		</tr>
-		<c:forEach items="${list}" var="review">
 			<tr>
 				<td>${review.id}</td>
 				<td><a href="review?action=detail&id=${review.id}">${review.title}</a></td>
@@ -25,8 +22,7 @@
 				<td>${review.dislikeCnt}</td>
 				<td>${review.regDate}</td>
 			</tr>
-		</c:forEach>
-
-	</table>
+		</tr>
+	</c:forEach>
 </body>
 </html>
