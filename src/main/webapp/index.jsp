@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,8 +9,6 @@
 </head>
 <body>
 	<h2>SSAFIT</h2>
-	
-	<a href="board?action=writeform">게시글등록1</a>
-	<a href="board?action=list">게시글목록</a>
+	<a href="/main?action=getList">메인페이지</a>
 </body>
 </html>
