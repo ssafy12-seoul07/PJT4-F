@@ -9,11 +9,11 @@ public class Review implements Serializable {
 	private static int no = 1; //클래스변수
 	private int id;
 	private int videoId;
-	private String title;
-	private String writer;
-	private String content;
-	private String regDate;
-	private int likeCnt;
+	private String title;// Review_title
+	private String writer; //user_id로 user.nickname 가져오기
+	private String content; // Review_content
+	private String regDate; // review_created_at
+	private int likeCnt; 
 	private int dislikeCnt;
 
 	public Review() {
